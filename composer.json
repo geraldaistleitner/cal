@@ -32,7 +32,7 @@
   },
   "autoload": {
     "psr-4": {
-      "TYPO3\\CMS\\Cal": "Classes"
+      "TYPO3\\CMS\\Cal\\": "Classes"
     }
   },
   "extra": {
