@@ -30,6 +30,11 @@
       "php .Build/web/typo3/cli_dispatch.phpsh extbase extension:install cal"
     ]
   },
+  "autoload": {
+    "psr-4": {
+      "TYPO3\\CMS\\Cal\\": "typo3conf/ext/cal/Classes"
+    }
+  },
   "extra": {
     "branch-alias": {
       "master": "1.0.0"
@@ -37,11 +42,6 @@
     "typo3/cms": {
       "cms-package-dir": "{$vendor-dir}/typo3/cms",
       "web-dir": ".Build/Web"
-    }
-  },
-  "autoload": {
-    "psr-4": {
-      "TYPO3\\CMS\\Cal\\": "typo3conf/ext/cal/Classes"
     }
   }
 }
