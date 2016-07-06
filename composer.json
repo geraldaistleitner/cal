@@ -1,0 +1,47 @@
+{
+  "name": "siwa/cal",
+  "type": "typo3-cms-extension",
+  "description": "SIWA Project",
+  "homepage": "https://example.com",
+  "license": [
+    "GPL-2.0+"
+  ],
+  "keywords": [
+    "TYPO3 CMS",
+    "foo bar"
+  ],
+  "support": {
+    "issues": "https://forge.typo3.org/projects/extension-foo"
+  },
+  "require": {
+    "siwa/siwa_base": "*"
+  },
+  "version": "7.6.0",
+  "config": {
+    "vendor-dir": ".Build/vendor",
+    "bin-dir": ".Build/bin"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "mkdir -p .Build/web/typo3conf/ext/",
+      "[ -L .Build/web/typo3conf/ext/cal ] || ln -snvf ../../../../. .Build/web/typo3conf/ext/cal"
+    ],
+    "post-update-cmd": [
+      "php .Build/web/typo3/cli_dispatch.phpsh extbase extension:install cal"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "master": "1.0.0"
+    },
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "TYPO3\\CMS\\Cal\\": "typo3conf/ext/cal/Classes"
+    }
+  }
+}
