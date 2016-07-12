@@ -41,7 +41,7 @@ class OrganizerFeUser extends \TYPO3\CMS\Cal\Model\Organizer {
 	}
 	function createOrganizer($row) {
 		$this->setUid ($row ['uid']);
-		$this->setName ($row ['name']);
+		$this->setName (($row ['company'])?$row ['company']:$row ['name']);
 		$this->setStreet ($row ['address']);
 		$this->setCity ($row ['city']);
 		$this->setZip ($row ['zip']);

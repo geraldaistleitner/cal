@@ -61,7 +61,7 @@ class CalendarService extends \TYPO3\CMS\Cal\Service\BaseService {
 			$additionalWhere .= ' AND pid IN (' . $pidList . ')';
 		}
 		$additionalWhere .= $this->getAdditionalWhereForLocalizationAndVersioning ('tx_cal_calendar');
-		
+
 		$result = $GLOBALS ['TYPO3_DB']->exec_SELECTquery ('*', 'tx_cal_calendar', '1=1' . $this->cObj->enableFields ('tx_cal_calendar') . $additionalWhere, '', $orderBy);
 		if ($result) {
 			while ($row = $GLOBALS ['TYPO3_DB']->sql_fetch_assoc ($result)) {

@@ -231,7 +231,7 @@ class ViewController extends \TYPO3\CMS\Cal\Controller\BaseController {
 		/* Call the view and pass it the event to draw */
 		$viewObj = $this->getServiceObjByKey ('cal_view', 'search', '_searchevent');
 		$content = $viewObj->drawSearchEventResult ($master_array, $starttime, $endtime, $searchword, $locationIds, $organizerIds);
-		
+
 		return $content;
 	}
 	

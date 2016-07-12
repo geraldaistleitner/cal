@@ -1,7 +1,7 @@
 <?php
 if (! defined ('TYPO3_MODE'))
 	die ('Access denied.');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPItoST43 ($_EXTKEY, 'Classes/Controller/Controller.php', '_controller', 'list_type', 1);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPItoST43 ($_EXTKEY, 'Classes/Controller/Controller.php', '_controller', 'list_type', 0);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig ('options.saveDocNew.tx_cal_event=1');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig ('options.saveDocNew.tx_cal_exception_event=1');
 

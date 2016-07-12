@@ -474,14 +474,14 @@ class CreateEventView extends \TYPO3\CMS\Cal\View\FeEditingBaseView {
 		$sims ['###ADDITIONALJS_SUBMIT###'] = '';
 		$sims ['###DESCRIPTION###'] = '';
 		if ($this->isAllowed ('description')) {
-			$sims ['###DESCRIPTION###'] = $this->cObj->stdWrap ('<textarea name="tx_cal_controller[description]" id="cal_event_description">' . $this->object->getDescription () . '</textarea>', $this->conf ['view.'] [$this->conf ['view'] . '.'] ['description_stdWrap.']);
+			$sims ['###DESCRIPTION###'] = $this->cObj->stdWrap ('<textarea rows="5" class="form-control" name="tx_cal_controller[description]" id="cal_event_description">' . $this->object->getDescription () . '</textarea>', $this->conf ['view.'] [$this->conf ['view'] . '.'] ['description_stdWrap.']);
 			
 			/* Start setting the RTE markers */
 			if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded ('tinymce_rte')) {
 				require_once (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath ('tinymce_rte') . 'pi1/class.tx_tinymce_rte_pi1.php'); // alternative RTE
 			}
 			if (! $this->RTEObj && \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded ('rtehtmlarea')) {
-				$this->RTEObj = new \TYPO3\CMS\Rtehtmlarea\Controller\FrontendRteController();
+				//$this->RTEObj = new \TYPO3\CMS\Rtehtmlarea\Controller\FrontendRteController();
 			} else if (! $this->RTEObj && \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded ('tinymce_rte')) {
 				$this->RTEObj = \TYPO3\CMS\Cal\Utility\Functions::makeInstance('tx_tinymce_rte_pi1'); // load alternative RTE
 			}
