@@ -1710,6 +1710,7 @@ class BaseView extends \TYPO3\CMS\Cal\Service\BaseService {
 		$view = new \TYPO3\CMS\Fluid\View\StandaloneView();
 		$view->setTemplatePathAndFilename($templateFile);
 		$view->assign($this->conf['view'].'View', $this);
+		$view->assign("fe_user", $GLOBALS['TSFE']->fe_user->user);
 		if(is_object($object)){
 			$view->assign($this->conf['view'], $object);
 		}

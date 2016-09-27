@@ -1344,7 +1344,7 @@ class EventModel extends \TYPO3\CMS\Cal\Model\Model {
 	function getEditLinkMarker(& $template, & $sims, & $rems, & $wrapped, $view) {
 		$eventStart = $this->getStart ();
 		$sims ['###EDIT_LINK###'] = '';
-		
+
 		if ($this->isUserAllowedToEdit ()) {
 			// controller = &\TYPO3\CMS\Cal\Utility\Registry::Registry('basic','controller');
 			$linkConf = $this->getValuesAsArray ();
@@ -1440,11 +1440,11 @@ class EventModel extends \TYPO3\CMS\Cal\Model\Model {
 	}
 	function isUserAllowedToEdit($feUserUid = '', $feGroupsArray = Array ()) {
 		$rightsObj = &\TYPO3\CMS\Cal\Utility\Registry::Registry ('basic', 'rightscontroller');
-		
+
 		if (! $rightsObj->isViewEnabled ('edit_event')) {
 			return false;
 		}
-		
+
 		if ($rightsObj->isCalAdmin ()) {
 			return true;
 		}
@@ -1453,6 +1453,7 @@ class EventModel extends \TYPO3\CMS\Cal\Model\Model {
 		if ($feUserUid == '') {
 			$feUserUid = $rightsObj->getUserId ();
 		}
+
 		if (empty ($feGroupsArray)) {
 			$feGroupsArray = $rightsObj->getUserGroups ();
 		}
