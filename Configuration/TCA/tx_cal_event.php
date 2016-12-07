@@ -303,7 +303,7 @@ $tx_cal_event = array(
 											'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_add.gif',
 											'params' => array(
 													'table' => $useOrganizerStructure,
-													'pid' => $sPid,
+													'pid' => '###PAGE_TSCONFIG_ID###',
 													'setValue' => 'set'
 											),
 											'module' => array(
@@ -398,7 +398,7 @@ $tx_cal_event = array(
 											'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_add.gif',
 											'params' => array(
 													'table' => $useLocationStructure,
-													'pid' => $sPid,
+													'pid' => '###PAGE_TSCONFIG_ID###',
 													'setValue' => 'set'
 											),
 											'module' => array(
