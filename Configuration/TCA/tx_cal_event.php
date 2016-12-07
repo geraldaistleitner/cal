@@ -324,7 +324,8 @@ $tx_cal_event = array(
 											)
 									),
 									'suggest' => array(
-											'type' => 'suggest'
+											'type' => 'suggest',
+											'pidList' => '###PAGE_TSCONFIG_ID###'
 									)
 							)
 					)
@@ -419,7 +420,8 @@ $tx_cal_event = array(
 											)
 									),
 									'suggest' => array(
-											'type' => 'suggest'
+											'type' => 'suggest',
+											'pidList' => '###PAGE_TSCONFIG_ID###'
 									)
 							)
 					)
