@@ -314,6 +314,7 @@ class SearchViews extends \TYPO3\CMS\Cal\View\ListView
     {
         $locationArray = $this->modelObj->findAllLocations($this->extConf ['useLocationStructure'] ? $this->extConf ['useLocationStructure'] : 'tx_cal_location', $this->conf ['pidList']);
         $locations = array();
+        $locations[] = array(id => 0, selected => 0, title => $this->controller->pi_getLL('l_all'));
         $locationIdArray = Array();
         if ($this->controller->piVars ['submit'] && $this->controller->piVars ['location_ids']) {
             $locationIdArray = $this->controller->piVars ['location_ids'];
