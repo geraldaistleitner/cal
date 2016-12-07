@@ -653,6 +653,16 @@ class ListView extends \TYPO3\CMS\Cal\View\BaseView {
 		
 		if ($this->conf ['activateFluid'] == 1) {
 			$this->_init ($master_array);
+			$count = 0;
+			foreach ($master_array as $index1 => $day){
+				foreach ($day as $index2 => $hour){
+					foreach ($hour as $index3 => $event){
+						$count++;
+						if ($count > $this->conf ['view.'] ['list.']['maxEvents'])
+							unset($master_array[$index1][$index2][$index3]);
+					}
+				}
+			}
 			return $this->renderWithFluid ();
 		}
 		
