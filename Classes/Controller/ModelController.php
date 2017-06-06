@@ -42,7 +42,7 @@ class ModelController extends \TYPO3\CMS\Cal\Controller\BaseController {
 			$type = 'tx_cal_phpicalendar';
 		}
 
-		if ($GLOBALS['BE_USER'] != null && $GLOBALS['BE_USER']->check('modules', "tx_siwacalworkflow")){
+		if ($GLOBALS['BE_USER'] != null && $GLOBALS['BE_USER']->check('modules', "web_SiwaCalWorkflowTxSiwaCalWorkflowApproval")){
 			$showHiddenEvents = true;
 		}
 		$event = $this->find ('cal_event_model', $uid, $type, 'event', $pidList, $showHiddenEvents, $showDeletedEvents, $getAllInstances, $disableCalendarSearchString, $disableCategorySearchString, $eventType);
